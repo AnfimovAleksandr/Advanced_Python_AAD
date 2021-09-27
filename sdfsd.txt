@@ -70,9 +70,11 @@ div(2, 4, show=True)
 ------------------------------------------------------------------
 
 import time
+from functools import wraps
 
 def big_dekor(path):
         def dekor(func):
+            @wraps(func)
             def wrapler(*args, **kwargs):
                 with open(path, 'w') as out:
                     out.write(time.ctime() + '\n')
@@ -84,7 +86,7 @@ def big_dekor(path):
                     out.write(str(retyrn) + '\n')
                     out.write(time.ctime() + '\n')
                     out.write(str(time.clock()) + '\n')
-            return func
+            return wrapler
         return dekor
 
 @big_dekor('F:\\ans.txt')
