@@ -49,9 +49,5 @@ for values in my_zip(names, age, sex):
 print('------Проверка my_enumerate------------------------')
 for idx, elem in my_enumerate(names, 99):
     print("{:02}: {:>7}".format(idx, elem))
-
-
-
-
-
-#C:\Users\Александр\Documents\GitHub\Advanced_Python_AAD\lab_7
+    
+    
