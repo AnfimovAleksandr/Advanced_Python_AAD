@@ -15,6 +15,23 @@ file.close()
 write_array(a, '2.txt')
 
 ------------------------------------------
+def write_array(array, file_name):
+    file = open(file_name, 'w')
+    arr = map (lambda x: x + '\n', array)
+    file.writelines(arr)
+    file.close()
+
+a = ['12345', 'asdfghgd', 'v9v9v9']
+write_array(a, '2.txt')
+------------------------------------------
+def write_array(array, file_name):
+    file = open(file_name, 'w')
+    file.write("\n".join(array))
+    file.close()
+
+a = ['12345', 'asdfghgd', 'v9v9v9']
+write_array(a, '2.txt')
+------------------------------------------
 
 import os
 import zipfile
@@ -25,7 +42,9 @@ try:
 except FileNotFoundError:
     print('Неправильный путь')
     
-
+#zzip = zipfile.ZipFile('путь к файлу')
+#zzip.extractall('куда распаковывать')
+#zzip.close()
 
 arr = []
     
@@ -36,7 +55,7 @@ try:
             arr.append(current_dir)
     arr.sort()
 except Exeption:
-    print('ошибка при попутке открытия файла с архивов')
+    print('Ошибка при попытке открытия файла с архивов')
         
 
 try:
